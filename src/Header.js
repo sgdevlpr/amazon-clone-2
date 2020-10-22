@@ -33,7 +33,8 @@ const handleAuthentication = () => {
       <div className="header__nav">
         <Link to={!user && '/login'}>
           <div onClick={handleAuthentication} className="header__option">
-            <span className="header__optionLineOne">Hello Guest</span>
+          {/* Cannot read property 'email' of null.....SOLUTION: IS TO ADD A ? MARK AFTER THE VAR*/}
+            <span className="header__optionLineOne">Hello {!user ? 'Guest' : user.email}</span> 
             <span className="header__optionLineTwo">{user ? 'Sign Out' : 'Sign In' }</span>
           </div>
           </Link>
