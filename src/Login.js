@@ -15,7 +15,9 @@ function Login() {
         auth
         .signInWithEmailAndPassword(email, password)
         .then(auth => {
+            if(auth){ // this line was missing
             history.push('/')
+            }   	
         })
         .catch(error => alert(error.message))
     }
